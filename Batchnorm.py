@@ -38,7 +38,7 @@ def batch_norm(X, gamma, beta, moving_mean, moving_var, is_training=True, eps=1e
             x_hat = (x - moving_mean) / torch.sqrt(moving_var + eps)
         outputs = gamma.view_as(x_mean) * x_hat + beta.view_as(x_mean)
 
-    elif len(X.shape) == 4:#BatchNorm2d
+    else len(X.shape) == 4:#BatchNorm2d
         x_mean = torch.mean(X, dim=(0, 2, 3))
         x_mean = x_mean.view(1, X.size(1), 1, 1)
         x_var = torch.sqrt(torch.var(X, dim=(0, 2 , 3), unbiased=False) + eps)
