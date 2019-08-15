@@ -159,8 +159,8 @@ def main():
                         help='input batch size for training (default: 64)')
     parser.add_argument('--test-batch-size', type=int, default=1000, metavar='N',
                         help='input batch size for testing (default: 1000)')
-    parser.add_argument('--epochs', type=int, default=10, metavar='N',
-                        help='number of epochs to train (default: 10)')
+    parser.add_argument('--epochs', type=int, default=30, metavar='N',
+                        help='number of epochs to train (default: 30)')
     parser.add_argument('--lr', type=float, default=0.01, metavar='LR',
                         help='learning rate (default: 0.01)')
     parser.add_argument('--momentum', type=float, default=0.5, metavar='M',
@@ -205,8 +205,8 @@ def main():
         train(args, model, device, train_loader, optimizer, epoch)
         loss,acc=test(args, model, device, test_loader)
         loss_list.append(loss)
-    x1 = range(1, (args.epochs+1))
-    x2 = range(1, (args.epoch+1))
+    x1 = range(1, 31)
+    x2 = range(1, 31)
     y1 = loss_list
     y2 = acc_list
     plt.subplot(2, 1, 1)
