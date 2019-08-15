@@ -205,6 +205,7 @@ def main():
         train(args, model, device, train_loader, optimizer, epoch)
         loss,acc=test(args, model, device, test_loader)
         loss_list.append(loss)
+        acc_list.append(acc)
     x1 = range(1, 31)
     x2 = range(1, 31)
     y1 = loss_list
