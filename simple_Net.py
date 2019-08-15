@@ -1,3 +1,7 @@
+import numpy as np
+import torch
+import torch.nn as nn
+
 class conv_bn_net(nn.Module):
     def __init__(self):
         super(conv_bn_net, self).__init__()

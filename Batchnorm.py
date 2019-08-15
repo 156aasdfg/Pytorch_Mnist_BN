@@ -1,3 +1,7 @@
+import numpy as np
+import torch
+import torch.nn as nn
+
 class BatchNorm(nn.Module):
     def __init__(self, num_features):
         super(BatchNorm, self).__init__()
